@@ -1,0 +1,396 @@
+/* Modern CSS with Animations and Gradients */
+:root {
+  --primary-color: #042444;
+  --accent-color: #faf9f7;
+  --dark-bg: #0a1f3d;
+  --light-bg: #f8f9fa;
+  --yellow-bg: #fafa06;
+  --text-dark: #2d3436;
+  --text-light: #ffffff;
+  --gradient-blue: linear-gradient(135deg, #004c97 0%, #0077b6 100%);
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background: var(--light-bg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header Styles */
+header {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: 2.0rem 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  width: 95%; /* Instead of 90% */
+  max-width: 1200px;
+  margin: 1.5;
+  display: flex;
+  justify-content: flex-start; /* Aligns the logo to the left */
+  align-items: center; /* Vertically centers the logo */
+  position: absolute; /* Use absolute positioning to place it in the top-left corner */
+  left: 20px; /* You can adjust this to move it further left or closer to the edge */
+  top: 20px; /* You can adjust this to move it further down or up */
+  font-size: 1rem; /* Adjust the size of the logo if needed */
+}
+
+
+.navbar {
+  float: right;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 0.0rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  background: 
+              url('https://static.vecteezy.com/system/resources/previews/022/159/146/non_2x/building-construction-site-with-a-tower-crane-and-engineer-and-workers-illustration-vector.jpg') fixed center/cover;
+              color: #080800;
+              height: 80vh;
+              /* width: 100%; */
+              background-size: contain; 
+              background-size: auto; /* Keeps the original resolution */
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-align: center;
+              background-attachment: scroll;
+              /*background-position: center 30%;*/
+}
+
+.hero-content {
+  animation: fadeIn 3s ease-out;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  color: #040000; /* Ensure text color is bright */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: bold; /* Makes text more visible */
+}
+
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--yellow-bg);
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255,215,0,0.3);
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255,215,0,0.4);
+}
+
+/* Projects Section */
+.projects {
+  padding: 5rem 0;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  margin: 1.5rem;
+  color: var(--primary-color);
+}
+
+.project-card p {
+  padding: 0 1.5rem 1.5rem;
+  color: #666;
+}
+
+/* About Section */
+.company-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.company-images img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.company-images img:hover {
+  transform: scale(1.03);
+}
+
+/* Footer */
+footer {
+  background: var(--dark-bg);
+  color: var(--text-light);
+  padding: 3rem 0;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+  background: #fff;
+  padding: 50px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  color: #042444;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.contact-container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.info-box {
+  background: #f1f1f1;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.icon {
+  font-size: 30px;
+  color: #042444;
+}
+
+.details h4 {
+  font-size: 1.25rem;
+  color: #042444;
+  margin-bottom: 5px;
+}
+
+.details p {
+  color: #666;
+}
+
+/* Contact Form */
+.contact-form {
+  flex: 1;
+  background: #f1f1f1;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+  font-size: 1.8rem;
+  color: #042444;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #042444;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+.form-group textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.btn {
+  background-color: #042444;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fafa06;
+}
+
+/* Footer Styles */
+.footer {
+  background: #042444;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Scroll Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.scroll-reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .logo, .navbar {
+    float: none;
+    text-align: center;
+  }
+  
+  .navbar {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero {
+    background-attachment: scroll; /* Fix background for mobile */
+    background-size: cover; /* Ensure full background image for mobile */
+    height: 60vh;
+  }
+  
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-size: cover;
+    height: 50vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .project-grid {
+    grid-template-columns: 1fr; /* Stack project cards vertically */
+  }
+}
